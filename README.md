@@ -11,6 +11,9 @@ El diagrama conceptual muestra las principales entidades con las que trabajará 
 
 ![alt text][Mockup]
 [Mockup]: /Mock_up.JPG
+
+
+
 El tablero de Trello nos muestra en las historias de usuarios de su Backlog las principales funciones de la aplicación en el siguiente link:
 [Tablero Trello](https://trello.com/b/nbC570nA/proyecto-desafio-latam)
 
@@ -22,7 +25,7 @@ El diseño inicial de la Base de datos (aún no implementado) contempla los sigu
 
 
 
-[Link a Heroku](https://git.heroku.com/glacial-mesa-85556.git)
+[Link a Heroku](https://glacial-mesa-85556.herokuapp.com/)
 
 
  
