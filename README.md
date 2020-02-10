@@ -10,7 +10,7 @@ El diagrama conceptual muestra las principales entidades con las que trabajará 
 
 
 ![alt text][Mockup]
-[Mockup]: /Mock_up.JPG
+[Mockup]: /Mock_up.png
 El tablero de Trello nos muestra en las historias de usuarios de su Backlog las principales funciones de la aplicación en el siguiente link:
 [Tablero Trello](https://trello.com/b/nbC570nA/proyecto-desafio-latam)
 
