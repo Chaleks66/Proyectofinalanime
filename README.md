@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta aplicación es la entrega final del curso Full Stack en Desafío Latam. Esta Aplicación es construida mediante Rails 5.2.3 y uso de POSTGRESQL como Base de Datos.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+El diagrama conceptual muestra las principales entidades con las que trabajará la aplicación.
+![alt text][concept]
+[concept]: /
+El tablero de Trello nos muestra en las historias de usuarios de su Backlog las principales funciones de la aplicación en el siguiente link:
+[Tablero Trello](https://trello.com/b/nbC570nA/proyecto-desafio-latam)
 
-* Configuration
+El diseño inicial de la Base de datos (aún no implementado) contempla los siguientes modelos con sus respectivas relacionas establecidas.
 
-* Database creation
+![alt text][logic]
 
-* Database initialization
+[logic]: /Diagrama.png "Diagrama Lógico"
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+
+## Pasos para levantar el proyecto
+
+-Clonar el repo.
+-rails db:create
+-rails db:migrate
+-rails db:seed
+-rails s
+-enjoy!
