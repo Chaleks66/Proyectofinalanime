@@ -18,21 +18,30 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-link">
+      <li class="nav-link ">
        <%= link_to  "Home", root_path %>
       </li>
       <li class="nav-link">
         <%= link_to  "Series", series_index_path, method: :index %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Listas</a>
-      </li>
       <li class=" nav-link ">
       <% if user_signed_in? %>
         <%= link_to  "Salir", destroy_user_session_path, method: :delete %>
         <% else %>
         <%= link_to  "Entrar", new_user_session_path, method: :new %>
         <% end %>
+      </li>
+        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Listas
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Listas Generales</a>
+    <a class="dropdown-item" href="#">Mi Lista</a>
+    <a class="dropdown-item" href="#">Listas de usuarios</a>
+  </div>
+</div>
       </li>
     </ul>
   </div>

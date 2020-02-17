@@ -10,19 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_182109) do
+ActiveRecord::Schema.define(version: 2020_02_17_195959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "genres", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.bigint "series_id"
+    t.text "description"
+    t.bigint "users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["series_id"], name: "index_lists_on_series_id"
+    t.index ["users_id"], name: "index_lists_on_users_id"
+  end
+
   create_table "series", force: :cascade do |t|
     t.string "name"
     t.integer "year"
-    t.string "genre"
     t.boolean "status"
     t.string "img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "genre_id"
+    t.index ["genre_id"], name: "index_series_on_genre_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +56,7 @@ ActiveRecord::Schema.define(version: 2020_02_17_182109) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lists", "series"
+  add_foreign_key "lists", "users", column: "users_id"
+  add_foreign_key "series", "genres"
 end
