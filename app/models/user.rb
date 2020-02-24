@@ -7,6 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, authentication_keys: [:nickname]
  attr_writer :login
+ has_many :lists
 
     def login
            @login || self.nickname || self.email

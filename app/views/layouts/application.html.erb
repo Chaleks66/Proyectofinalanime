@@ -22,7 +22,7 @@
        <%= link_to  "Home", root_path %>
       </li>
       <li class="nav-link">
-        <%= link_to  "Series", series_index_path, method: :index %>
+        <%= link_to  "Series", series_path %>
       </li>
       <li class="nav-item">
       <li class=" nav-link ">
@@ -37,9 +37,9 @@
     Listas
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Listas Generales</a>
-    <a class="dropdown-item" href="#">Mi Lista</a>
-    <a class="dropdown-item" href="#">Listas de usuarios</a>
+    <%= link_to "Listado general de Anime", lists_path, class: "dropdown-item" %>
+    <%= link_to "Mi Lista", lists_path(@list), class: "dropdown-item" %>
+    
   </div>
 </div>
       </li>

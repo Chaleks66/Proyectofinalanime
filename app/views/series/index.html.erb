@@ -7,7 +7,6 @@
     <tr>
       <th>Name</th>
       <th>Year</th>
-      <th>Genre</th>
       <th>Status</th>
       <th>Img</th>
       <th colspan="3"></th>
@@ -19,11 +18,10 @@
       <tr>
         <td><%= series.name %></td>
         <td><%= series.year %></td>
-        <td><%= series.genre %></td>
         <td><%= series.status %></td>
         <td><%= series.img %></td>
         <td><%= link_to 'Show', series %></td>
-        <td><%= link_to 'Edit', edit_series_path(series) %></td>
+        <td><%= link_to 'Edit', edit_serie_path(series) %></td>
         <td><%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -32,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Series', new_series_path %>
+<%= link_to 'New Series', new_serie_path %>

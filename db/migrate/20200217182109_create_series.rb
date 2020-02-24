@@ -3,7 +3,6 @@ class CreateSeries < ActiveRecord::Migration[5.2]
     create_table :series do |t|
       t.string :name
       t.integer :year
-      t.string :genre
       t.boolean :status
       t.string :img
 
