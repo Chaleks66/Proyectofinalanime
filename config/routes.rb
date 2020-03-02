@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :serie_comments
-  resources :series
+  resources :series do
+    resources :comments
+  end
   resources :lists
   devise_for :users, controllers: {
     registrations: 'users/registrations', 

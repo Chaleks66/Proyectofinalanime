@@ -2,10 +2,10 @@
 
 one:
   content: MyString
-  series: one
-  users: one
+  serie: one
+  user: one
 
 two:
   content: MyString
-  series: two
-  users: two
+  serie: two
+  user: two

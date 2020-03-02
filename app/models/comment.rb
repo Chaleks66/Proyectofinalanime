@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :series, optional: true
-  belongs_to :users
+  belongs_to :serie
+  belongs_to :user
 end

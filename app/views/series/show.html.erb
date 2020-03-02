@@ -25,16 +25,25 @@
 <%= link_to 'Back', series_path %>
 
 
-<p>
-Comments: <% @serie.comments.each do |post| %>
-  <div class="card" style="width: 18rem;">
-  <%= image_tag  @serie.img, class: "card-img-top", style:'filter:grayscale(100%)' %>
-    <div class="card-body">
-      <h5 class="card-title"><%= serie.name %></h5>
+
+<h3>Comments: </h3>
+<% if @serie.comments %>
+    
+  <% @serie.comments.each do |post| %>
+    
+    <div class="card" style="width: 18rem;">    
       <h5 class="card-body"><%= post.content %></h5>
     </div>
-  </div>
-      <% end %>
-</p>
 
-<%= link_to "Add Comment", new_comment_path(serie_id: @serie.id) %>
+  <% end %>
+
+<% else %>
+
+  <div class="card" style="width: 18rem;">    
+    <h5 class="card-body">Sin comentarios</h5>
+  </div>  
+
+<% end %>
+
+<%= link_to "Add Comment", new_serie_comment_path(serie_id: @serie.id) %>
+
