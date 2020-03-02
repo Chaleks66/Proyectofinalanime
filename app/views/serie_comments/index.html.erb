@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Serie Comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Series</th>
+      <th>Users</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @serie_comments.each do |serie_comment| %>
+      <tr>
+        <td><%= serie_comment.content %></td>
+        <td><%= serie_comment.series %></td>
+        <td><%= serie_comment.users %></td>
+        <td><%= link_to 'Show', serie_comment %></td>
+        <td><%= link_to 'Edit', edit_serie_comment_path(serie_comment) %></td>
+        <td><%= link_to 'Destroy', serie_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Serie Comment', new_serie_comment_path %>

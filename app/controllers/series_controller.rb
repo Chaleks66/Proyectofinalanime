@@ -1,6 +1,8 @@
 class SeriesController < ApplicationController
   before_action :set_serie, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show, :edit, :new, :create, :update, :destroy]
+  
+  
   # before_action :series_params, only: [:create, :edit, :update, :show, :index]
   
   # GET /series
@@ -30,8 +32,9 @@ class SeriesController < ApplicationController
 
     respond_to do |format|
       if @serie.save
-        format.html { redirect_to @serie, notice: 'Serie was successfully created.' }
+        format.html { redirect_to @serie, notice: 'Serie was successfully added.' }
         format.json { render :show, status: :created, location: @serie }
+        
       else
         format.html { render :new }
         format.json { render json: @serie.errors, status: :unprocessable_entity }
@@ -71,6 +74,6 @@ class SeriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def serie_params
-      params.require(:serie).permit(:name, :year,  :status, :img)
+      params.require(:serie).permit(:name, :year,  :status, :img, :serie_comment_id)
     end
 end

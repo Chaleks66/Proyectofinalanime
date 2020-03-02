@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @serie_comment.content %>
+</p>
+
+<p>
+  <strong>Series:</strong>
+  <%= @serie_comment.series %>
+</p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @serie_comment.users %>
+</p>
+
+<%= link_to 'Edit', edit_serie_comment_path(@serie_comment) %> |
+<%= link_to 'Back', serie_comments_path %>
