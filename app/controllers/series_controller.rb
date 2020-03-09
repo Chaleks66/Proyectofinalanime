@@ -74,6 +74,6 @@ class SeriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def serie_params
-      params.require(:serie).permit(:name, :year,  :status, :img, :serie_comment_id)
+      params.require(:serie).permit(:name, :year,  :status, :images, :serie_comment_id)
     end
 end

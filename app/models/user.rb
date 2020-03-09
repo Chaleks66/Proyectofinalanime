@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, authentication_keys: [:nickname]
  attr_writer :login
  has_many :lists
+ has_one_attached :avatar
 
     def login
            @login || self.nickname || self.email
