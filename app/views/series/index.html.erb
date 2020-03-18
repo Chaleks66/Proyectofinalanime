@@ -33,29 +33,25 @@
 
 <%= link_to 'New Series', new_serie_path %>
 
-<div id="carouselExampleIndicators" class="carousel slide text-center" data-ride="carousel">
+<div id="carouselSeries" class="carousel slide text-center" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-inner">
-    <% @series.each do |serie| %>
-        <div class="carousel-item active">
+    <div class="carousel-item active">
+      <!-- imagen de portada -->
+    </div>
+    <% @series.each_slice(3) do |series| %>
+      <div class="carousel-item">
+        <div class="card-deck">
+          <% series.each do |serie| %>
+            <div class="card">        
             <%= serie.image %>
-        </div>
-        <div class="carousel-item">
             <%= serie.name %>
+            <%= serie.year %>
+            </div>
+          <% end %>
         </div>
-        <div class="carousel-item">
-            <%=serie.year %>
-        </div>
+      </div>
     <% end %>
-</div>
-</div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+ </div>
+  
+ 
