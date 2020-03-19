@@ -16,6 +16,7 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
+    @series = Serie.all
   end
 
   # GET /lists/1/edit

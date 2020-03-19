@@ -12,19 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :series_id %>
-    <%= form.text_field :series_id %>
-  </div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+
 
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
 
+  
+
   <div class="field">
-    <%= form.label :users_id %>
-    <%= form.text_field :users_id %>
-  </div>
+  <% @series.each do |serie| %>
+    <%= form.label serie.name %>
+    <%= form.check_box serie.name %>
+  <% end %>
+</div>
 
   <div class="actions">
     <%= form.submit %>

@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Year</th>
-      <th>Status</th>
-      <th>Img</th>
+      <th>Nombre</th>
+      <th>Año</th>
+      <th>Finalizada</th>
+      <th>Imagen</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,6 +21,8 @@
         <td><%= series.status %></td>
         <% if series.images.attached? %>
        <td><%=image_tag series %></td>
+        <% else %>
+          <td> No img </td>
            <% end %>
         <td><%= link_to 'Show', series %></td>
         <td><%= link_to 'Edit', edit_serie_path(series) %></td>
@@ -33,25 +35,6 @@
 
 <%= link_to 'New Series', new_serie_path %>
 
-<div id="carouselSeries" class="carousel slide text-center" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <!-- imagen de portada -->
-    </div>
-    <% @series.each_slice(3) do |series| %>
-      <div class="carousel-item">
-        <div class="card-deck">
-          <% series.each do |serie| %>
-            <div class="card">        
-            <%= serie.image %>
-            <%= serie.name %>
-            <%= serie.year %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
- </div>
-  
+
+
  

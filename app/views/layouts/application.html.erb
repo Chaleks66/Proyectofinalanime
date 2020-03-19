@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ProyectoFinalSeries</title>
+    <title>Mecha-lists</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,7 +13,8 @@
 
   <body class="bg-dark text-light">
   <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-  <a class="navbar-brand" href="#">Animelists</a>
+  <a class="navbar-brand" href="#">Mecha-lists</a>
+  <img src="https://img.icons8.com/ios/50/000000/mobile-suit-gundam.png"/>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,22 +27,22 @@
         <%= link_to  "Series", series_path %>
       </li>
       <li class="nav-item">
-      <li class=" nav-link ">
-      <% if user_signed_in? %>
-        <%= link_to  "Salir", destroy_user_session_path, method: :delete %>
-        <% else %>
-        <%= link_to  "Entrar", new_user_session_path, method: :new %>
-        <% end %>
-      </li>
+      
         <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Listas
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <%= link_to "Listado general de Anime", lists_path, class: "dropdown-item" %>
-    <%= link_to "Mi Lista", lists_path(@list), class: "dropdown-item" %>
-    
+    <%= link_to "Nueva Lista", new_list_path(@list), class: "dropdown-item" %>
   </div>
+  <li class=" nav-link justify-content-end ">
+      <% if user_signed_in? %>
+        <%= link_to  "Salir", destroy_user_session_path, method: :delete %>
+        <% else %>
+        <%= link_to  "Entrar", new_user_session_path, method: :new %>
+        <% end %>
+      </li>
 </div>
       </li>
     </ul>
