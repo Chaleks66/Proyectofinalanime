@@ -20,7 +20,7 @@
         <td><%= series.year %></td>
         <td><%= series.status %></td>
         <% if series.images.attached? %>
-       <td><%=image_tag series %></td>
+       <td><%=image_tag series.images %></td>
         <% else %>
           <td> No img </td>
            <% end %>
