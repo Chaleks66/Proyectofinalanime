@@ -11,28 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="field">
   <%= form.label :name %>
   <%= form.text_field :name %>
 </div>
 
 
 
-  <div class="field">
+<div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
-  </div>
+</div>
 
   
 
-  <div class="field">
-  <% @series.each do |serie| %>
-    <%= form.label serie.name %>
-    <%= form.check_box serie.name %>
-  <% end %>
+<div class="field">
+  
+    <%= form.collection_check_boxes(:serie_ids, @series, :id, :name) %>
+  
 </div>
 
-  <div class="actions">
+<div class="actions">
     <%= form.submit %>
-  </div>
+</div>
 <% end %>
