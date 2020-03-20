@@ -2,8 +2,39 @@
 
 <h1 class="text-center">Series</h1>
 
-<table class= "w-100">
-  <thead>
+
+<button type="button" class="btn btn-danger"><%= link_to 'New Series', new_serie_path %></button>
+<br>
+<br>
+<div id="carouselSeries" class="carousel slide text-center" data-ride="carousel" style="">
+<div class="carousel-inner">
+
+  <% @series.each_slice(3) do |series| %>
+    <div class="carousel-item active" style=" max-width: 1024px; max-height: 728px ">
+      <div class="card-deck">
+        <% series.each do |serie| %>
+          <div class="card">
+           <% if serie.images.attached? %>        
+              <%= image_tag serie.images %>
+           <% else %>
+              <h2><%= "No hay imagen" %></h2>
+           <% end %>
+          </div>
+          <div class="carousel-caption d-none d-md-block text-dark">
+              <h5><%= serie.name %></h5>
+              <p><%= serie.year %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+<br>
+<br>
+<br>
+<table class= "table table-bordered">
+  <thead class="bg-danger">
     <tr>
       <th>Nombre</th>
       <th>Año</th>
@@ -13,51 +44,19 @@
     </tr>
   </thead>
 
-  <tbody class="bg-secondary border border-danger">
+  <tbody class="bg-success border border-danger">
     <% @series.each do |series| %>
       <tr>
         <td><%= series.name %></td>
         <td><%= series.year %></td>
         <td><%= series.status %></td>
-        <% if series.images.attached? %>
-       <td><%=image_tag series.images %></td>
-        <% else %>
-          <td> No img </td>
-           <% end %>
-        <td><%= link_to 'Show', series %></td>
-        <td><%= link_to 'Edit', edit_serie_path(series) %></td>
-        <td><%= link_to 'Destroy', series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', series %></td>
+        <td><%= link_to 'Editar', edit_serie_path(series) %></td>
+        <td><%= link_to 'Destruir', series, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-
-<%= link_to 'New Series', new_serie_path %>
-
-<div id="carouselSeries" class="carousel slide text-center" data-ride="carousel">
-<div class="carousel-inner">
-  <div class="carousel-item">
-    <!-- imagen de portada -->
-  </div>
-  <% @series.each_slice(3) do |series| %>
-    <div class="carousel-item active">
-      <div class="card-deck">
-        <% series.each do |serie| %>
-          <div class="card">
-           <% if serie.images.attached? %>        
-              <%= image_tag serie.images %>
-          <% end %>
-          </div>
-          <div class="carousel-caption d-none d-md-block">
-              <h5><%= serie.name %></h5>
-              <p><%= serie.year %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-</div>
-
 
  

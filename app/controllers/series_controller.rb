@@ -1,7 +1,7 @@
 class SeriesController < ApplicationController
   before_action :set_serie, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show, :edit, :new, :create, :update, :destroy]
-  
+
   
   # before_action :series_params, only: [:create, :edit, :update, :show, :index]
   
