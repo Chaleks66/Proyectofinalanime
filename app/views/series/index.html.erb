@@ -6,31 +6,7 @@
 <button type="button" class="btn btn-danger"><%= link_to 'New Series', new_serie_path %></button>
 <br>
 <br>
-<div id="carouselSeries" class="carousel slide text-center" data-ride="carousel" style="">
-<div class="carousel-inner">
-<div class="carousel-item active" >
-      <h2> Series De Anime </h2>
-</div>
 
-  <% @series.each_slice(3) do |series| %>
-    <div class="carousel-item " >
-      <div class="card-deck">
-        <% series.each do |serie| %>
-          <div class="card" style=" max-width: 1024px; max-height: 728px ">
-           <% if serie.images.attached? %>        
-              <%= image_tag serie.images %>
-           <% else %>
-              <h2><%= "No hay imagen" %></h2>
-           <% end %>
-          </div>
-         
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-</div>
 <br>
 <br>
 <br>
@@ -59,5 +35,33 @@
   </tbody>
 </table>
 <br>
+<br>
+<br>
+<br>
+<br>
+<div id="carouselSeries" class="carousel slide text-center" data-ride="carousel" style="">
+<div class="carousel-inner">
+<div class="carousel-item active" >
+      <h2> Series De Anime </h2>
+</div>
 
+  <% @series.each_slice(3) do |series| %>
+    <div class="carousel-item " >
+      <div class="card-deck">
+        <% series.each do |serie| %>
+          <div class="card" style=" max-width: 1024px; max-height: 728px ">
+           <% if serie.images.attached? %>        
+              <%= image_tag serie.images %>
+           <% else %>
+              <h2><%= "No hay imagen" %></h2>
+           <% end %>
+          </div>
+         
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+</div>
  
